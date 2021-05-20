@@ -54,4 +54,12 @@ client.on('message', message => {
 });
 
 // login to Discord with your app's token
-client.login('ODA5NTc5NjMwMzY0OTgzMzI2.YCXJyQ.OkPtgxAa0mFclv104nm3bAKXmps');
+client.login(/** Your token here*/);
+
+
+
+
+
+
+
+

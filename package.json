@@ -1,0 +1,14 @@
+{
+  "name": "logbot9001",
+  "version": "1.0.0",
+  "description": "Hi there meatbag. My primary purpose is to read the two minutes of preceding conversation when you say !logit, and repeat it into my own special place.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "J. Elliot Miller",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}

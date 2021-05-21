@@ -1,12 +1,14 @@
 // require the discord.js module
 const Discord = require('discord.js');
+var auth = require('logbotConf.json');
 
 // create a new Discord client
 const client = new Discord.Client();
 
-const timeGap = 120000
-const logTrigger = "!logit"
-const msgNum = 11
+const timeGap = auth.msg_time
+const logTrigger = auth.log_trigger
+const msgNum = auth.msg_num
+const logChannel = auth.log_channel
 
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
@@ -15,6 +17,10 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
+	console.log(timeGap)
+	console.log(logTrigger)
+	console.log(msgNum)
+	console.log(logChannel)
   if (message.content === logTrigger) {
 
   message.channel.messages.fetch()
@@ -36,11 +42,12 @@ client.on('message', message => {
 			for (i = upperBound; i >= 0; i--) {
 				if(arraySet[i][1].content != logTrigger && arraySet[i][1].content != "" && arraySet[i][1].content != " ") {
 					try {
-						message.guild.channels.cache.find(i => i.name === 'peepers-log-channel').send(arraySet[i][1].content);
+						message.guild.channels.cache.find(i => i.name === logChannel).send(arraySet[i][1].content);
 						console.log("Printing msg " + i + ": " + arraySet[i][1].content)
 					}
 					catch(err){
 						console.log("Error thrown for msg" + i + ": " + arraySet[i][1].content)
+						console.log(err)
 					}
 				}else{
 					console.log("Invalid message")
@@ -54,12 +61,4 @@ client.on('message', message => {
 });
 
 // login to Discord with your app's token
-client.login(/** Your token here*/);
-
-
-
-
-
-
-
-
+client.login(auth.token);

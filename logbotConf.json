@@ -1,0 +1,7 @@
+{
+"msg_time":120000,
+"msg_num":11,
+"log_channel":"peepers-log-channel",
+"log_trigger":"!logit",
+"token": "TOKEN_GOES_HERE"
+}

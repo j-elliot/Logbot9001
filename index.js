@@ -1,6 +1,6 @@
 // require the discord.js module
 const Discord = require('discord.js');
-var auth = require('logbotConf.json');
+var auth = require('./logbotConf.json');
 
 // create a new Discord client
 const client = new Discord.Client();
